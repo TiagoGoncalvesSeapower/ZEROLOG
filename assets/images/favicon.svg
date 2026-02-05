@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <!-- Background 0 shape -->
+  <ellipse cx="64" cy="64" rx="50" ry="60" fill="#0b3c5d"/>
+  
+  <!-- Inner 0 cutout to give a ring look -->
+  <ellipse cx="64" cy="64" rx="40" ry="50" fill="#0b3c5d" stroke="#ffffff" stroke-width="8"/>
+
+  <!-- Z foreground -->
+  <path transform="translate(4, 0)" d="M40 40h40v8L48 80h32v8H40v-8l32-32H40z" fill="#ffffff"/>
+</svg>

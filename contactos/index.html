@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="page-title" content="Contactos">
+  <title></title>
+
+  <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="../assets/js/include.js"></script>
+  <script src="../assets/js/project-data.js"></script>
+  <script src="../assets/js/project-render.js"></script>
+</head>
+
+<body class="contacts">
+
+<div id="header"></div>
+
+<main class="container content-wrap">
+
+  <section class="facts facts--contacts">
+    <h2>SeaPower</h2>
+
+    <div class="facts-row">
+      <strong>Morada:</strong>
+      <span data-project="address"></span>
+    </div>
+
+    <div class="facts-row">
+      <strong>Telefone:</strong>
+      <span data-project="phone"></span>
+    </div>
+
+    <div class="facts-row">
+      <strong>Email:</strong>
+      <span data-project="email"></span>
+    </div>
+  </section>
+
+  <section class="facts facts--card">
+    <h2>Contacte-nos por email</h2>
+
+    <form action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="b6142c55-c267-479b-8da0-c0f6b0c42594">
+
+      <!-- Custom subject -->
+      <input type="hidden" name="subject" value="ZEROLOG - Nova mensagem do website">
+
+      <!-- From name shown in your inbox -->
+      <input type="hidden" name="from_name" value="Website ZEROLOG">
+
+      <!-- Reply-to the user's email -->
+      <input type="hidden" name="replyto" value="email">
+
+      <!-- Anti-spam honeypot (NOT shown in the email body) -->
+      <input type="checkbox" name="botcheck" class="hidden" style="display:none;">
+
+      <!-- VISIBLE FIELDS (ONLY THESE WILL APPEAR IN EMAIL) -->
+      
+      <div class="form-row">
+        <div class="form-col">
+          <label class="required">Nome</label>
+          <input type="text" name="name" required maxlength="80">
+        </div>
+
+        <div class="form-col">
+          <label class="required">Telefone</label>
+          <input type="text" name="phone" required maxlength="20" data-phone-input>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-col">
+          <label class="required">Email</label>
+          <input type="email" name="email" required maxlength="120">
+        </div>
+
+        <div class="form-col">
+          <label>Empresa</label>
+          <input type="text" name="company" maxlength="80">
+        </div>
+      </div>
+
+
+      <label class="required">Assunto</label>
+      <input type="text" name="user_subject" required maxlength="120">
+
+      <label class="required">Mensagem</label>
+      <textarea name="message" required maxlength="2000"></textarea>
+
+      <button type="submit">Enviar</button>
+
+      <p class="small">
+        Destinatário: <span data-project="email"></span>
+      </p>
+    </form>
+
+  </section>
+
+</main>
+
+<div id="footer"></div>
+
+<script>
+  loadHTML("header", "../partials/header.html");
+  loadHTML("footer", "../partials/footer.html");
+  initMobileNav();
+  renderProjectData();
+  initPhonePrefill();
+  initWeb3FormsJS();
+</script>
+
+</body>
+
+</html>

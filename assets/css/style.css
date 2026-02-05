@@ -1,0 +1,1098 @@
+
+/* =========================
+   Design Tokens (Variables)
+   ========================= */
+
+:root {
+  --color-primary: #0b3c5d;
+  --color-accent: #e1f2ef;
+
+  --color-text: #1a1a1a;
+  --color-muted: #666;
+  --color-border: #ddd;
+  --color-bg: #ffffff;
+  --color-bg-light: #f6f8fa;
+  --color-table-even: #fafafa;
+
+  --max-width: 1100px;
+  --radius: 6px;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+
+  
+  --header-height: 100px;
+  --footer-height: 150px;
+
+}
+
+/* =========================
+   Reset & Base
+   ========================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+html, body {
+  height: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* =========================
+   Layout Utilities
+   ========================= */
+
+
+.container {
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1rem;
+}
+
+@media (max-width: 750px) {
+  .container {
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+  }
+}
+
+main {
+  flex: 1 0 auto;
+  flex-grow: 1;
+  flex-shrink: 0;
+  margin-top: 2rem;
+  padding-bottom: 3rem;
+}
+
+main h1:first-child {
+  margin-top: 0;
+}
+
+section {
+  margin-bottom: 2.5rem;
+}
+
+
+main p {
+  text-align: justify;
+}
+
+main.content-wrap {
+  min-height: calc(100vh - var(--header-height) - var(--footer-height));
+}
+
+[data-project="summary"] {
+  display: block;
+  text-align: justify;
+  margin-bottom: 1.5rem;
+}
+
+/* =========================
+   Typography
+   ========================= */
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--color-primary);
+  line-height: 1.3;
+  margin-top: 0;
+}
+
+h1 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 1.6rem;
+  margin-bottom: 0.75rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  margin: 0.5rem 0 1rem;
+}
+
+ul {
+  padding-left: 1.2rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+/* =========================
+   Objectives Accordion
+   ========================= */
+
+#objectives-container {
+  width: 100%;
+  display: block;
+  padding-bottom: 1rem;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+/* Objective wrapper */
+.objective-item {
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-bg-light);
+  width: 100%;
+}
+
+/* Main objective button */
+.objective-toggle {
+  width: 100%;
+  display: block;
+  text-align: left;
+  padding: 1rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+
+.objective-toggle,
+.subobjective-toggle {
+  min-height: 48px;
+}
+
+.objective-content {
+  display: none;
+  padding: 1rem;
+}
+.objective-content.open {
+  display: block;
+}
+
+/* Subobjective wrapper */
+.subobjective-wrapper {
+  margin-top: 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: white;
+}
+
+/* Subobjective toggle */
+.subobjective-toggle {
+  width: 100%;
+  display: block;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  background: var(--color-bg-light);
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  background: var(--color-primary);
+  color: white;
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+
+/* Subobjective content */
+.subobjective-content {
+  display: none;
+  padding: 0.75rem 1rem;
+}
+.subobjective-content.open {
+  display: block;
+}
+
+.objective-toggle:hover,
+.subobjective-toggle:hover {
+  opacity: 0.9;
+}
+
+
+
+#context-list strong{
+  color: var(--color-primary);
+}
+
+
+@media (max-width: 800px) {
+  .container {
+    padding: 0 0.8rem;
+  }
+
+  h1 {
+    font-size: 1.7rem;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  p, li {
+    font-size: 1rem;
+  }
+}
+
+
+@media (max-width: 500px) {
+  .container { padding: 0 1rem; }
+}
+
+
+/* =========================
+   Header & Navigation
+   ========================= */
+
+.site-header {
+  background-color: var(--color-primary);
+  box-shadow: var(--shadow);
+}
+
+.site-brand {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: white;
+  margin-right: 2rem;
+  white-space: nowrap;
+}
+
+.navbar {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  min-height: 64px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.25rem 0;
+  border-bottom: 2px solid transparent;
+  
+  display: block;
+  line-height: 1.3;
+  padding: 0.5rem 0.75rem;
+  text-align: center;
+
+}
+
+.nav-links a:hover {
+  border-bottom-color: var(--color-accent);
+}
+
+.nav-links a.active {
+  border-bottom-color: var(--color-accent);
+  font-weight: 600;
+}
+
+.nav-toggle {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* =========================
+   Mobile Header Improvements
+   ========================= */
+@media (max-width: 750px) {
+  header {
+    padding: 1rem 1.25rem; /* larger header */
+    min-height: 64px;
+  }
+
+  header .site-brand {
+    font-size: 1.45rem; /* bigger project acronym/title */
+  }
+
+  header nav ul {
+    gap: 0.75rem; /* more spacing between items */
+  }
+
+  header nav a {
+    font-size: 1.1rem;
+    padding: 0.6rem 0.8rem;
+  }
+
+  .nav-links a {
+    padding: 0.75rem 0;
+    font-size: 1.1rem;
+  }
+
+  .navbar {
+    min-height: 70px;
+    flex-direction: column;
+  }
+
+  .site-brand {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 650px) and (min-width: 501px) {
+  .nav-links {
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 500px) {
+
+  .site-brand {
+    margin-right: 0;
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .nav-toggle {
+    display: block;
+    margin-left: 0.75rem;
+  }
+
+  .site-brand, .nav-toggle {
+    align-self: center;
+  }
+
+  .navbar-top {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .nav-links {
+    display: none;
+    position: static;
+    width: 100%;
+    background: var(--color-primary);
+    padding: 1rem 0;
+    border-radius: var(--radius);
+    gap: 0.75rem;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-links.open {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center;
+    width: 100%;
+  }
+
+  .nav-links a {
+    padding: 0.75rem 1rem;
+    font-size: 1.1rem;
+    width: 100%;
+    text-align: center;
+    display: block;
+  }
+
+  .navbar {
+    flex-direction: column !important;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+  }
+
+  .nav-links.open a.active {
+    background: rgba(255, 255, 255, 0.20);
+    border-radius: var(--radius);
+    border-bottom: none;
+    color: white;
+    font-weight: 600;
+    width: 100%;
+    display: block;
+    text-align: center;
+    padding: 0.9rem 1rem;
+  }
+
+  .nav-links.open a:hover {
+    background: rgba(255, 255, 255, 0.28);
+  }
+
+}
+
+
+/* =========================
+   Footer
+   ========================= */
+
+.site-footer p {
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--color-muted);
+  margin: 1.5rem 0;
+}
+
+/* =========================
+   Footer Image Strip
+   ========================= */
+
+
+#footer-strip {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+#footer-strip img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+  opacity: 0.95;
+  transition: opacity 0.2s ease-in-out;
+}
+
+#footer-strip img:hover {
+  opacity: 1;
+}
+
+/* =========================
+   Cards / Content Blocks
+   ========================= */
+
+.card {
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+}
+
+#news-container .card {
+  margin-bottom: 2rem;
+  text-align: justify;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+#news-container .card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+#news-container .card h2 {
+  text-align: center;
+}
+
+/* =========================
+   Partners Section
+   ========================= */
+
+#partners-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.partner {
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+/* Subtle hover lift */
+.partner:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Header vertical */
+.partner-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0rem;
+  margin-bottom: 0rem;
+}
+
+.partner-header a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+  width: min(200px, 100%);
+  height: auto;
+  aspect-ratio: 5 / 3;
+
+
+  background: white;
+  border-radius: var(--radius);
+  padding: 0.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+.partner-header a:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 8px rgba(0,0,0,0.15);
+}
+
+/* Logo scaling */
+.partner-logo {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* Mobile (kept, but now naturally vertical) */
+@media (max-width: 800px) {
+  .partner {
+    padding: 1rem;
+  }
+}
+
+/* =========================
+   Facts Section
+   ========================= */
+.facts p {
+  margin: 0.4rem 0;
+}
+
+.facts strong {
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+
+/* ====================================
+   Contacts Page — Center Facts Section
+   ==================================== */
+
+.facts--contacts {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 1rem 0;
+  text-align: left;
+}
+
+.facts--contacts h2 {
+  text-align: left;
+}
+
+.facts--contacts .facts-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.facts--contacts .facts-row strong {
+  width: 15%;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.facts--contacts .facts-row span {
+  flex: 1;
+  text-align: left;
+}
+
+/* =========================
+   Project Facts (Homepage)
+   ========================= */
+
+.facts-grid {
+  background: var(--color-bg-light);
+  padding: 2rem 3.5rem 1rem 3.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  
+  width: 75%;
+  max-width: 60%;
+  box-sizing: border-box;
+
+  margin-top: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.facts-grid h2 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+.facts-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+  align-items: center
+}
+
+.facts-row strong {
+  width: 35%;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.facts-row span {
+  flex: 1;
+  text-align: left;
+
+}
+
+.facts-dates {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-bottom: 0.8rem;
+}
+
+.date-separator {
+  color: var(--color-muted);
+  font-weight: 600;
+}
+
+@media (max-width: 750px) {
+  .facts-grid {
+    max-width: 75%;
+    padding: 1.5rem 3rem 0.5rem 3rem;
+  }
+
+  .facts-row {
+    flex-direction: column;
+    align-items: flex-start;;
+  }
+
+  .facts-row strong {
+    width: 100%;
+  }
+
+  .facts-dates {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.25rem;
+  }
+}
+
+body.home main.content-wrap {
+  min-height: auto;
+  padding-bottom: 0.25rem;
+}
+
+/* =========================
+   Contact Card (Email)
+   ========================= */
+
+.facts--card {
+  background: var(--color-bg-light);
+  padding: 2rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  max-width: 700px;
+  margin: 2rem auto;
+}
+
+.facts--card h2 {
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+}
+
+.facts--card .hint {
+  margin-bottom: 1.25rem;
+  color: var(--color-muted);
+}
+
+.contact-simple {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.contact-buttons {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.mailto-inline {
+  color: inherit;
+  text-decoration: none;
+  font-weight: inherit;
+}
+
+.mailto-inline:hover {
+  text-decoration: underline;
+}
+
+.facts--card .small {
+  font-size: 0.9rem;
+  color: var(--color-muted);
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+  .facts--cardd {
+    max-width: 100%;
+    padding: 1.25rem;
+  }
+}
+
+/* =========================
+   Contact Form (Web3Forms)
+   ========================= */
+
+.facts--card form {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.facts--card form label {
+  font-weight: 500;
+  margin-bottom: 0.2rem;
+  color: var(--color-primary);
+}
+
+.facts--card form input,
+.facts--card form textarea {
+  width: 100%;
+  padding: 0.55rem 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  font-size: 1rem;
+  font-family: inherit;
+  background: white;
+  color: var(--color-text);
+  box-sizing: border-box;
+}
+
+.facts--card form input:focus,
+.facts--card form textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(0, 100, 200, 0.15);
+}
+
+.facts--card form textarea {
+  min-height: 125px;
+  resize: vertical;
+}
+
+.facts--card form button[type="submit"] {
+  margin-top: 0.75rem;
+  padding: 0.6rem 1rem;
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: center;
+  transition: opacity 0.2s ease;
+}
+
+.facts--card form button[type="submit"]:hover {
+  opacity: 0.9;
+}
+
+.facts--card form .form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.facts--card form .form-col {
+  display: flex;
+  flex-direction: column;
+}
+
+label.required::after {
+  content: " *";
+  color: #e63946;
+}
+
+.success-message {
+  padding: 0.8rem 1rem;
+  background: #d1f7d6;
+  border: 1px solid #63c27c;
+  color: #2d6a43;
+  border-radius: var(--radius);
+  margin-bottom: 1rem;
+}
+
+.error-message {
+  padding: 0.8rem 1rem;
+  background: #ffe0e0;
+  border: 1px solid #cc6b6b;
+  color: #8a2d2d;
+  border-radius: var(--radius);
+  margin-bottom: 1rem;
+}
+
+
+@media (max-width: 800px) {
+  .facts--card form .form-row {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+  .facts--card form {
+    gap: 0.85rem;
+  }
+}
+
+
+/* =========================
+   Tabs for Overview Page
+   ========================= */
+
+.tabs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.tab-button {
+  background: var(--color-bg-light);
+  color: var(--color-primary);
+  border: 1px solid var(--color-border);
+  padding: 0.6rem 1.2rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.tab-button:hover {
+  background: var(--color-accent);
+  color: var(--color-primary);
+}
+
+.tab-button.active {
+  background: var(--color-primary);
+  color: white;
+  border-color: var(--color-primary);
+}
+
+
+.tab-section {
+  display: none;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+.tab-section.active {
+  display: block;
+}
+
+
+@media (max-width: 750px) {
+  .tab-button {
+    padding: 0.9rem 1.4rem;
+    font-size: 1.1rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  .tabs {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}
+
+
+/* =========================
+   Tables (Activities)
+   ========================= */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+#activities-table-body td:first-child {
+  width: 3rem;
+  text-align: center;
+}
+
+th,
+td {
+  border: 1px solid var(--color-border);
+  padding: 0.6rem 0.75rem;
+  text-align: left;
+}
+
+th {
+  background-color: var(--color-bg-light);
+  font-weight: 600;
+}
+
+tbody tr:nth-child(even) {
+  background-color: var(--color-table-even);
+}
+
+.table-scroll {
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  display: block;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Minimum width before scroll activates */
+.table-scroll table {
+  min-width: 750px;
+  width: max-content;
+  table-layout: auto;
+}
+
+#tab-activities table {
+  width: auto;
+  table-layout: auto;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+
+#tab-activities .table-scroll {
+  overflow-x: auto !important;
+  position: relative;
+}
+
+#tab-activities {
+  overflow-x: visible;
+}
+
+/* Activities table column sizing */
+#tab-activities th:nth-child(1),
+#tab-activities td:nth-child(1) {
+  width: 13%;
+  text-align: center;
+}
+
+#tab-activities th:nth-child(2),
+#tab-activities td:nth-child(2) {
+  width: 45%;
+}
+
+#tab-activities th:nth-child(3),
+#tab-activities td:nth-child(3) {
+  width: 25%;
+}
+
+#tab-activities th:nth-child(4),
+#tab-activities td:nth-child(4) {
+  width: 17%;
+  text-align: center;
+}
+
+#tab-activities th:nth-child(2),
+#tab-activities th:nth-child(3){
+  text-align: center;
+}
+
+/* =========================
+   Top Banner Section
+   ========================= */
+.top-banner {
+    width: 100%;
+    background-color: var(--color-bg-light);
+    padding: 3.5rem 0;
+    border-bottom: 1px solid var(--color-border);
+    margin: 0;
+    flex-shrink: 0;
+}
+
+.top-banner-inner {
+    text-align: center;
+}
+
+.top-banner-title {
+    margin: 0;
+    font-size: 2.5rem;
+    color: var(--color-primary);
+    font-weight: 700;
+}
+
+.top-banner-subtitle {
+    margin: 0.5rem 0 0;
+    font-size: 1.2rem;
+    color: var(--color-text);
+    opacity: 0.85;
+}
+
+@media (max-width: 800px) {
+    .top-banner-title {
+        font-size: 1.9rem;
+    }
+    .top-banner-subtitle {
+        font-size: 1rem;
+    }
+}
+
+
+html, body {
+  overflow-x: visible !important;
+}
+
+body {
+    flex-direction: column;
+    min-height: 100vh;
+    display: block;
+}
+
+body {
+  overflow-y: scroll;
+}
+
+body::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: transparent;
+}

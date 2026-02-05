@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="page-title" content="Resumo">
+  <title></title>
+  
+  <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="../assets/js/include.js"></script>
+  <script src="../assets/js/project-data.js"></script>
+  <script src="../assets/js/project-render.js"></script>
+</head>
+<body>
+
+<div id="header"></div>
+
+
+<main class="container content-wrap">
+
+  <!-- Tabs Navigation -->
+  <div class="tabs">
+    <button class="tab-button active" data-tab="context">Contexto</button>
+    <button class="tab-button" data-tab="objectives">Objetivos</button>
+    <button class="tab-button" data-tab="activities">Atividades</button>
+  </div>
+
+  <!-- CONTEXT TAB -->
+  <section id="tab-context" class="tab-section active">
+    <h2>Contexto</h2>
+
+    <p>
+      Nos próximos 3-5 anos, todos os prestadores de serviços de logística,
+      empresas de transporte e empresas que geram cadeias de abastecimento
+      terão de medir e reportar as suas emissões. Vários eventos no contexto 
+      regulamentar e empresarial estão a desenrolar-se para acelerar esta tendência:
+    </p>
+
+    <ul id="context-list"></ul>
+  </section>
+
+  <!-- OBJECTIVES TAB -->
+  <section id="tab-objectives" class="tab-section">
+    <h2>Objetivos do Projeto</h2>
+    <p>
+      O sistema ZEROLOG tornar-se-á uma ferramenta digital inovadora projetada para calcular e
+      monitorizar a pegada de carbono das operações de transporte, logística ou cadeia de
+      abastecimento. Ao aproveitar dados em tempo real de várias fontes, a plataforma vai oferecer uma
+      análise precisa e eficiente da pegada de carbono, ajudando as empresas a minimizar o seu impacto
+      ambiental e alcançar os objetivos de sustentabilidade.
+    </p>
+    <div id="objectives-container"></div>
+  </section>
+
+  <!-- ACTIVITIES TAB -->
+  <section id="tab-activities" class="tab-section">
+    <h2>Atividades</h2>
+    <p>
+      A metodologia de desenvolvimento do projeto foi definida, tendo em conta os desafios de I&D
+      identificados e está alinhada com a progressão de TRL (desde 3, até 7), considerando os objetivos
+      propostos. O projeto apresenta um programa de trabalho, por fases, com as seguinte atividades delineadas:
+    </p>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th>Nº da Atividade</th>
+            <th>Designação da Atividade</th>
+            <th>Classificação</th>
+            <th>Promotor Responsável</th>
+          </tr>
+        </thead>
+        <tbody id="activities-table-body"></tbody>
+      </table>
+    </div>
+  </section>
+
+</main>
+
+
+<div id="footer"></div>
+
+<script>
+  loadHTML("header", "../partials/header.html");
+  loadHTML("footer", "../partials/footer.html");
+  initMobileNav();
+  renderProjectData();
+  renderContextSection();
+  renderActivitiesTable();
+  renderObjectivesSection();
+  initOverviewTabs();
+</script>
+
+</body>
+
+
+</html>

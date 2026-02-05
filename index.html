@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="page-title" content="Página Inicial">
+  <title></title>
+
+  <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="assets/js/include.js"></script>
+  <script src="assets/js/project-data.js"></script>
+  <script src="assets/js/project-render.js"></script>
+</head>
+
+<body class="home">
+
+  <div id="header"></div>
+
+  <section class="top-banner">
+    <div class="top-banner-inner container">
+        <h1 data-project="acronym"></h1>
+        <p class="top-banner-subtitle" data-project="title"></p>
+    </div>
+  </section>
+
+  <main class="container content-wrap">
+        
+    
+    <span data-project="summary"></span>
+
+    <section class="facts-grid">
+
+        <h2>Dados do Projeto</h2>
+
+        <div class="facts-row">
+            <strong>Acrónimo:</strong>
+            <span data-project="acronym"></span>
+        </div>
+
+        <div class="facts-row">
+            <strong>Título do Projeto:</strong>
+            <span data-project="title"></span>
+        </div>
+
+        
+        <div class="facts-row">
+            <strong>Duração:</strong>
+
+            <div class="facts-dates">
+                <span data-project="startDate"></span>
+                <span class="date-separator">→</span>
+                <span data-project="endDate"></span>
+            </div>
+        </div>
+
+
+        <div class="facts-row">
+            <strong>Entidade Financiadora:</strong>
+            <span data-project="fundingEntity"></span>
+        </div>
+
+        <div class="facts-row">
+            <strong>Investimento Total:</strong>
+            <span data-project="investmentTotal"></span>
+        </div>
+
+        <div class="facts-row">
+            <strong>Apoio da União Europeia:</strong>
+            <span data-project="euSupport"></span>
+        </div>
+
+    </section>
+  </main>
+
+<div id="footer"></div>
+
+
+<script>
+  loadHTML("header", "partials/header.html");
+  loadHTML("footer", "partials/footer.html");
+  initMobileNav();
+  renderProjectData();
+</script>
+
+</body>
+
+
+</html>

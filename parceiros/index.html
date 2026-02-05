@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="page-title" content="Parceiros">
+  <title></title>
+
+  <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="../assets/js/include.js"></script>
+  <script src="../assets/js/project-data.js"></script>
+  <script src="../assets/js/project-render.js"></script>
+</head>
+<body>
+
+<div id="header"></div>
+
+
+<main class="container content-wrap">
+
+  <div id="partners-container">
+    <!-- Partners rendered here -->
+  </div>
+</main>
+
+
+<div id="footer"></div>
+
+
+<script>
+  loadHTML("header", "../partials/header.html");
+  loadHTML("footer", "../partials/footer.html");
+  initMobileNav();
+  renderProjectData();
+  renderPartnersSection();
+</script>
+
+</body>
+
+
+</html>
